@@ -6,7 +6,7 @@ library(sf)
 library(dplyr)
 
 #chemin du fichier geojson
-chemin_geojson <- "Z:/carto/pr?sentation tuiles/fonds carte iris/fm.geojson"
+chemin_geojson <- "Z:/carto/présentation tuiles/fonds carte iris/fm.geojson"
 
 #chemin du fichier RP 2022 qui contient les indicateurs qui nous intéressent
 #où trouver le fichier https://www.insee.fr/fr/statistiques/8647014
@@ -16,7 +16,7 @@ chemin_fichier_rp_2022 <- "Z:/carto/présentation tuiles/données/base-ic-evol-s
 fm <- st_read(chemin_geojson)
 
 #afficher les iris de loire atlantique. A noter que la base est assez lourde.
-#par exemple si on veut afficher les iris des pays de loire, R a du mal à suivre. Il faut être patient.
+#par exemple si on veut afficher les iris des pays de la loire, R a du mal à suivre. Il faut être patient.
 plot(fm[which(substr(fm$CODE_IRIS,1,2) %in% c("44")),1])
 
 #import des données du RP 2022

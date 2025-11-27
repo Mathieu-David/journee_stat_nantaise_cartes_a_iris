@@ -20,5 +20,5 @@ View(fm[1:5,])
 fm <- st_transform(fm, crs = 4326)
 st_crs(fm)
 
-#export de la table FM au format geojson (à noter que l'export peut être un peu long et que le fichier geojson peut être important, supérieur à 1 go pour les zonages à l'iris)
+#export de la table fm au format geojson (à noter que l'export peut être un peu long et que le fichier geojson peut être important, supérieur à 1 go pour les zonages à l'iris)
 st_write(fm, chemin_geojson, driver = "GeoJSON")

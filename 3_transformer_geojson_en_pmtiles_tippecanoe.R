@@ -1,8 +1,8 @@
 # générer un fichier tuilé pour les iris\communes entre le zoom 4 et le zoom 11 avec l'outil tippecanoe
 
 ## tippecanoe : nom de l'outil qui construit le fichier tuilé pmtiles, cet outil doit être installé
-## fm_iris_com.pmtiles : fichier tuilé en sortie
-## iris.geojson : fichier geojson en entrée
+## fm.pmtiles : fichier tuilé en sortie
+## fm.geojson : fichier geojson en entrée
 ## --minimum-zoom=4 : zoom minimum auquel on veut représenter les iris\communes
 ## --maximum-zoom=11 : zoom maximal auquel on veut représenter les iris\communes
 ## au-delà du zoom 11 le fond de carte continu à s'afficher mais les polygones ne gagnent pas en qualité
@@ -14,4 +14,4 @@
 ## la fonction system de R permet d'exécuter à partir d'un script R des commandes dans un terminal
 
 
-system("tippecanoe -o data/output/fm_iris_com.pmtiles --minimum-zoom=4 --maximum-zoom=11 --force --drop-rate=0 --no-feature-limit --no-tile-size-limit --layer=iris_pop_retraite data/derived/fm.geojson")
+system("tippecanoe -o data/output/fm.pmtiles --minimum-zoom=4 --maximum-zoom=11 --force --drop-rate=0 --no-feature-limit --no-tile-size-limit --layer=iris_pop_retraite data/derived/fm.geojson")
