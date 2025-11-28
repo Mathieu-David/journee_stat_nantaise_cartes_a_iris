@@ -22,7 +22,7 @@ pm_view(
 pm_stop_server()
 
 ############################
-#représenter un pmtiles en mode serveur avec un choroplèthe
+#représenter un pmtiles en mode serveur avec un choroplèthe avec des couleurs différentes suivant les classes
 ############################
 #https://gist.github.com/walkerke/cf87df489be8065635cf9b0c0dee34f5
 #https://walkerke.r-universe.dev/pmtiles
@@ -35,7 +35,7 @@ pm_serve(chemin_pmtiles, port = 8080)
 maplibre(center = c(2, 48), zoom= 4) |># on utilise la bibliothèque maplibre
   set_projection("globe") |> #on choisit la projection de type globe
   add_vector_source(# permet d'aller pointer vers le fichier pmtiles que l'on veut interroger
-    "pmtiles_source", #nom donnée au fichier pmtiles pour R
+    "pmtiles_source", #nom donné au fichier pmtiles pour R
                     url = "pmtiles://http://localhost:8080/fm.pmtiles"#url du fichier pmtiles qui sera requêté pour construire la carte
   ) |>
   add_fill_layer(#permet d'ajouter les choroplèthes
@@ -47,7 +47,7 @@ maplibre(center = c(2, 48), zoom= 4) |># on utilise la bibliothèque maplibre
       column = "part_retraite_15p",#variable que l'on veut utiliser pour colorer la carte
       values = c(0,21,27,32,39,50),#les seuils des différentes classes
       stops = c("#fbd9d9", "#f8aeb1","#fa7075", "#fa4545","#fb1e1e","#8e0000")),#les couleurs des différentes classes
-    fill_opacity = 0.9# opacité 
+    fill_opacity = 0.9#opacité 
   ) |> add_line_layer(#permet d'ajouter les contours des iris\communes
     id = "contour_iris_com",#nom donné aux contours des iris\communes
     source = "pmtiles_source",#fait référence au nom que l'on donne dans "add_vector_source" pour le fichier pmtiles utilisé
@@ -56,7 +56,7 @@ maplibre(center = c(2, 48), zoom= 4) |># on utilise la bibliothèque maplibre
     line_width = 0.2, #largeur des frontières
     line_opacity = 0.9 #opacité des frontières
   ) |>
-  add_control(#permet d'ajouter une légende ou par exemple un titre, elle est construite en html
+  add_control(#permet d'ajouter une légende ou par exemple un titre, c'est du html
     #####
     #.legend définit la légende de manière globale
     ####
@@ -68,7 +68,7 @@ maplibre(center = c(2, 48), zoom= 4) |># on utilise la bibliothèque maplibre
     #####
     #.legend span définit les carrés colorés de la légende
     ####
-    #par exemple width: 14px; et height: 14px; définissement la largeur et la hauteur des carrés de la légende
+    #par exemple width: 14px; et height: 14px; définissement la largeur et la hauteur des carrés colorés de la légende
     
     html = '<style>
     .legend {

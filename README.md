@@ -20,4 +20,4 @@ Le script "4_afficher_pmtiles_dans_R.R" permet d'afficher dans R un fichier pmti
 ## Afficher un fichier pmtiles via une page html
 
 Dans le dossier "affichage pmtiles html", il y a le fichier index qui est un fichier html qui requête le fichier fm.pmtiles pour afficher la carte.
-Le fichier fm.pmtiles est un fichié tuilé qui contient la géométrie des iris ou communes ainsi que quelques variables, comme la part des retraités parmi les 15 ans ou plus.
+Le fichier fm.pmtiles est un fichier tuilé qui contient la géométrie des iris ou communes ainsi que quelques variables, comme la part des retraités parmi les 15 ans ou plus.
